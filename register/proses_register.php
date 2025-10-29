@@ -19,5 +19,6 @@
         echo "Registrasi berhasil. Silahkan melakukan <a href='../index.php'>login</a>.";
     } else {
         echo "Error: " . mysqli_error($conn);
-    }
+    }    
+    mysqli_close($conn);
 ?>

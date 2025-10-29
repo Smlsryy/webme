@@ -22,3 +22,4 @@ if (mysqli_num_rows($result) == 1) {
 } else {
     echo "Username atau password tidak ditemukan";
 }
+mysqli_close($conn);
