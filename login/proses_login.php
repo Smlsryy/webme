@@ -7,7 +7,7 @@ $password = $_POST['password'];
 
 
 if (!$username || !$password) {
-    echo "Username dan password tidak boleh kosong!";
+    echo "<script>alert('Username dan password tidak boleh kosong!'); window.location='../index.php';</script>";
     exit();
 } 
 
@@ -17,9 +17,9 @@ $result = mysqli_query($conn, $query);
 if (mysqli_num_rows($result) == 1) {
     $_SESSION['username'] = $username;
     $_SESSION['status'] = "login";
-    header("Location: ../dashboard.php");
+    echo "<script>alert('Login berhasil!'); window.location='../dashboard.php';</script>";
     exit();
 } else {
-    echo "Username atau password tidak ditemukan";
+    echo "<script>alert('Username atau password tidak ditemukan'); window.location='../index.php';</script>";
 }
 mysqli_close($conn);

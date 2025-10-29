@@ -10,13 +10,13 @@
         $cekDuplikat = "SELECT * FROM user WHERE username='$username'";
         $result = mysqli_query($conn, $cekDuplikat);
         if (mysqli_num_rows($result) > 0) {
-            echo "Username sudah ada, gunakan username lainnya";
+            echo "<script>alert('username sudah ada, gunakan username lainnya'); window.location='../register/register.php';</script>";
             exit();
         }
     }
 
     if (mysqli_query($conn, $query)) {
-        echo "Registrasi berhasil. Silahkan melakukan <a href='../index.php'>login</a>.";
+        echo "<script>alert('Registrasi berhasil! Silakan login.'); window.location='../index.php';</script>";
     } else {
         echo "Error: " . mysqli_error($conn);
     }    
