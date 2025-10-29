@@ -7,11 +7,9 @@ $password = $_POST['password'];
 
 
 if (!$username || !$password) {
-    echo "Username and password cannot be empty.";
+    echo "Username dan password tidak boleh kosong!";
     exit();
-} else {
-    echo "Berhasil login<br>";
-}
+} 
 
 $query = "SELECT * FROM user WHERE username='$username' AND password='$password'";
 $result = mysqli_query($conn, $query);

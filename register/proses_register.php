@@ -4,7 +4,7 @@
     include '../conn.php';
     $query = "INSERT INTO user (username, password) VALUES ('$username', '$password')";
     if ($username == "" || $password == "") {
-        echo "Username and password cannot be empty.";
+        echo "Username dan password tidak boleh kosong!";
         exit();
     } else {
         $cekDuplikat = "SELECT * FROM user WHERE username='$username'";
@@ -16,9 +16,8 @@
     }
 
     if (mysqli_query($conn, $query)) {
-        echo "Registration successful. You can now <a href='../index.php'>login</a>.";
+        echo "Registrasi berhasil. Silahkan melakukan <a href='../index.php'>login</a>.";
     } else {
         echo "Error: " . mysqli_error($conn);
     }
-
 ?>
